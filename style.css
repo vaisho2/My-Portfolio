@@ -1,0 +1,976 @@
+/* applied margin & padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header section starts */
+
+/* Nav section */
+.navbar {
+  /* set display to flex & provided height,width */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 5vh;
+  /* added bg color, position set to fixed to make it static & z-index to make it visible */
+  background-color: #323538;
+  position: fixed;
+  z-index: 1;
+  /* added some font styles */
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* navigation list width adjusted */
+.navigation-list {
+  width: 40%;
+  margin: 15px;
+}
+
+.navigation-list ul {
+  /* navigation-list ul list style set to none to hide bullet points */
+  list-style: none;
+  /* set display to flex */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* set text decoration to none to style links and changed its color */
+.navigation-list a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* adjusting toggle width & set display to flex */
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  width: 5%;
+}
+
+/* styling for actual toggle button */
+.button {
+  background-color: #d2d2d2;
+  width: 50px;
+  height: 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* styling before the button is clicked */
+.button::before {
+  position: absolute;
+  content: "";
+  width: 22.5px;
+  height: 22.5px;
+  background-color: #070a08;
+  border-radius: 50px;
+  margin: 1.25px;
+}
+
+/* styling after the button is clicked/checked */
+input:checked + .button {
+  background-color: #59f370;
+}
+
+/* move the slider circle using transform */
+input:checked + .button::before {
+  transform: translateX(25px);
+}
+
+/* hide the checkbox */
+#check {
+  display: none;
+}
+
+/* adjusting logo */
+.navbar img {
+  width: 110px;
+  height: 20px;
+  padding: 5%;
+}
+
+/* home section started */
+
+/* set display to flex, added bg image and centered items */
+.home {
+  height: 100vh;
+  background-image: url(./images/homebg.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+/* styled heading */
+.home h1 {
+  font-size: 100px;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+
+/* styled intro text */
+.home h3 {
+  font-size: 40px;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+
+/* adjusted profile img */
+.home img {
+  height: 200px;
+  width: 200px;
+  border: 5px solid #68c4db;
+  border-radius: 100px;
+  margin-top: 50px;
+}
+
+/* ul in home list style none to hide bullet points */
+.home ul {
+  list-style: none;
+  display: flex;
+  width: 20%;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 70px;
+}
+
+/* set text decoration to none to style links and changed its color & font size */
+.home a {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}
+
+/* resume button styled & added transition */
+.home button {
+  color: #b3ddcd;
+  background-color: #2f4f4f;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  padding: 15px;
+  margin-top: 90px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+/* hover effects for resume button */
+.home button:hover {
+  background-color: #67bebe;
+  cursor: pointer;
+}
+
+/* set font size */
+.home button a {
+  font-size: 15px;
+}
+
+/* about section started */
+
+/* set display flex */
+.about {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5%;
+}
+
+/* adjusted width */
+.about-info {
+  width: 70%;
+}
+
+/* set font size */
+.about-info h1 {
+  font-size: 100px;
+}
+
+/* set font size & padding */
+.about-info p {
+  font-size: 20px;
+  padding: 2%;
+}
+
+/* styled read more button & added transition */
+#about-btn {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  padding: 10px;
+  font-size: 15px;
+  background-color: #97dfc3;
+  color: slategrey;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 20px;
+  cursor: pointer;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+/* added hover effect */
+#about-btn:hover {
+  background-color: #06f398;
+  color: #000000;
+}
+
+/* set diplay to none to hide and show info without deleting */
+#extra-info {
+  display: none;
+}
+
+/* adjusted profile img also added some animation */
+.about img {
+  width: 15%;
+  height: 100%;
+  padding: 0%;
+  margin: 30px;
+  border-radius: 10%;
+  box-shadow: 5px 5px 5px #000000;
+  animation-name: animationMovement;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation-fill-mode: forwards;
+}
+
+/* set different opacity during different intervals to get animation effect */
+@keyframes animationMovement {
+  0% {
+    opacity: 100;
+  }
+  25% {
+    opacity: 75;
+  }
+  50% {
+    opacity: 50;
+  }
+  75% {
+    opacity: 25;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* skills section starts here */
+
+/* added some bg image and adjusted it */
+.skills {
+  background-image: url("./images/skillsbg.png");
+  background-size: cover;
+  padding-bottom: 65px;
+}
+
+/* aligned text & font-size */
+.skills h1 {
+  text-align: center;
+  font-size: 100px;
+}
+
+/* adjusted skills box & added some box shadow to make it more visible */
+.skills-progress {
+  width: 500px;
+  margin: auto;
+  padding: 30px;
+  background-color: #ffffffbf;
+  box-shadow: 0 14px 28px #00000040, 0 10px 10px #00000038;
+  border-radius: 20px;
+}
+
+/* set list style none to hide bullet points & adjusted margin & padding */
+.skills-progress li {
+  margin: 20px 0px;
+  padding: 10px;
+  list-style: none;
+}
+
+/* added padding */
+.skills-progress li h3 {
+  padding: 5px;
+}
+
+/* added some boder & border-radius, shadow, also overflow is hidden and added transition to show progress */
+.bar {
+  background: #353648;
+  display: block;
+  height: 20px;
+  border: 1px solid #0000004d;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px #0000001f, 0 1px 2px #0000003d;
+  transition: 0.3s cubic-bezier (0.25, 0.8, 0.25, 1);
+}
+
+/* added bg as gradient color to show actual progress */
+.bar span {
+  height: 20px;
+  float: left;
+  background: linear-gradient(135deg, #3b60c7 0%, #33a8df 100%);
+}
+
+/* added animation & width */
+.html {
+  width: 90%;
+  animation: html 3s;
+}
+
+/* added animation & width */
+.css {
+  width: 80%;
+  animation: css 3s;
+}
+
+/* added animation & width */
+.javascript {
+  width: 50%;
+  animation: javascript 3s;
+}
+
+/* added animation & width */
+.java {
+  width: 40%;
+  animation: java 3s;
+}
+
+/* set different width during starting point & end point */
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+
+/* set different width during starting point & end point */
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 70%;
+  }
+}
+
+/* set different width during starting point & end point */
+@keyframes javascript {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 60%;
+  }
+}
+
+/* set different width during starting point & end point */
+@keyframes java {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 45%;
+  }
+}
+
+/* Certifications section starts here */
+
+/* set display to flex, added some padding, bg color & text color */
+.certifications {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 50px;
+  background-color: #203837;
+  color: white;
+}
+
+/* adjusted width, padding & font-size & added some text shadow */
+.certifications h1 {
+  width: 100%;
+  font-size: 100px;
+  text-shadow: 2px 2px 5px #97dfc3;
+  padding: 5%;
+}
+
+/* styled certificate cards with shadows, text align */
+.certificate {
+  width: 15%;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 3%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #0e140f;
+}
+
+/* added box shadow */
+.certificate:hover {
+  box-shadow: 0px 0px 5px 8px #97dfc3;
+}
+
+/* set font size */
+.certificate h3 {
+  font-size: 25px;
+}
+
+/* set font stylings, margin & padding */
+.certificate p {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: 13px;
+  margin: 5px;
+  padding: 5%;
+}
+
+/* styled text & added transition */
+.certificate button {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 15px;
+  color: #353648;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  padding: 5%;
+  margin-top: 10px;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+/* added hover effect */
+.certificate button:hover {
+  background-color: #2f4f4f00;
+}
+
+/* adjusted certificates widths */
+#certi1,
+#certi2,
+#certi3 {
+  display: none;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Projects section starts here */
+
+/* set display flex & added some bg color */
+.projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px;
+  background-color: #2d6a4f;
+  color: white;
+}
+
+/* added hover effect */
+.project:hover {
+  box-shadow: 0px 0px 5px 8px #97dfc3;
+}
+
+/* styled text & adjusted width */
+.projects h1 {
+  width: 100%;
+  font-size: 100px;
+  text-shadow: 2px 2px 5px #000000;
+  padding: 5%;
+}
+
+/* adjusted widths added bg color also aligned text to center */
+.project {
+  width: 15%;
+  background-color: #ffffff80;
+  text-align: center;
+  padding: 3%;
+  border-radius: 10px;
+  margin: 1%;
+}
+
+/* styled text & added margin */
+.project h3 {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: 25px;
+  margin-bottom: 10%;
+}
+
+/* styled text & added margin */
+.project p {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: 13px;
+  margin: 50px;
+}
+
+/* added transition and made adjustments */
+.project a {
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  color: white;
+  padding: 5%;
+  margin-top: 50px;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+/* added hover effects */
+.project a:hover {
+  cursor: pointer;
+  background-color: #80808088;
+}
+
+/* Contact section starts here */
+
+/* added bg color & padding */
+.contact {
+  background-color: #d8f3dc;
+  padding: 50px;
+}
+
+/* styled,aligned text & added padding */
+.contact h1 {
+  text-align: center;
+  font-size: 100px;
+  padding: 5%;
+}
+
+/* set diplay to flex, added bg color */
+.contact form {
+  padding: 5%;
+  font-size: 25px;
+  background-color: #d8f3dc;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+}
+
+/* styled text */
+.contact label {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 20px;
+}
+
+/* styled input box */
+.contact input {
+  width: 50%;
+  font-size: 15px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* added some border radius,padding */
+.contact textarea {
+  padding: 3%;
+  border: none;
+  border-radius: 5px;
+}
+
+/* styled text, adjusted widths */
+.contact button {
+  width: 200px;
+  padding: 10px;
+  margin-top: 50px;
+  border: 1px solid #000000;
+  border-radius: 50px;
+  background-color: #344e41;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* added hover effect */
+.contact button:hover {
+  cursor: pointer;
+  background-color: #588157;
+}
+
+/* Footer section starts here */
+
+/* set display flex, aligned text */
+footer {
+  display: flex;
+  padding: 50px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/* styled icon */
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+/* adjusted icons */
+.call-email,
+.socials {
+  width: 50%;
+}
+
+/* adjusted icons */
+.call-email button {
+  padding: 1%;
+  margin: 10px;
+  border: 1px solid #000000;
+  border-radius: 50px;
+}
+
+/* added hover effect */
+.call-email button:hover {
+  transform: scale(1.5);
+}
+
+/* styled icons */
+.socials ul {
+  list-style: none;
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+  margin: auto;
+}
+
+/* Adding media queries to make website reponsive */
+
+@media (max-width: 360px) {
+  /* adjusted height, font-size */
+  .navbar {
+    height: 43px;
+    font-size: x-small;
+  }
+
+  /* adjusted width */
+  .navigation-list {
+    width: 85%;
+  }
+
+  /* adjusted width */
+  .toggle {
+    width: 15%;
+  }
+
+  /* adjusted height */
+  .button {
+    height: 20px;
+  }
+
+  /* adjusted height & width */
+  .button::before {
+    width: 15px;
+    height: 18px;
+  }
+
+  /* applied flex wrap */
+  .navigation-list ul {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  /* changed font size,alignment */
+  .home h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  /* changed font size */
+  .home h3 {
+    font-size: 30px;
+  }
+
+  /* adjusted width */
+  .home ul {
+    width: 50%;
+  }
+
+  /* changed font size */
+  .about-info h1 {
+    font-size: 50px;
+  }
+
+  /* changed font size */
+  .about-info p {
+    font-size: 15px;
+  }
+
+  /* adjusted width */
+  .about img {
+    width: 30%;
+  }
+
+  /* changed font size */
+  .skills h1 {
+    font-size: 50px;
+  }
+
+  /* adjusted width */
+  .skills-progress {
+    width: 275px;
+  }
+
+  /* changed padding */
+  .certifications {
+    padding: 20px;
+  }
+
+  /* changed font size */
+  .certifications h1 {
+    font-size: 50px;
+  }
+
+  /* adjusted width & margin */
+  .certificate {
+    width: 60%;
+    margin: 20px;
+  }
+
+  /* changed padding */
+  .projects {
+    padding: 20px;
+  }
+
+  /* changed font size */
+  .projects h1 {
+    font-size: 50px;
+  }
+
+  /* adjusted width & margin,padding */
+  .project {
+    width: 75%;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  /* changed padding */
+  .contact {
+    padding: 20px;
+  }
+
+  /* changed font size */
+  .contact h1 {
+    font-size: 50px;
+  }
+
+  /* adjusted width & margin,padding,font size */
+  .contact input {
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  /* added padding, changed flex direction to column */
+  footer {
+    padding: 20px;
+    flex-direction: column;
+    background-color: #0e140f;
+  }
+
+  /* changed width,font-size,alignment */
+  .socials,
+  .call-email {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  /* set display flex, adjusted items */
+  .socials ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10%;
+  }
+
+  /* changed icon color */
+  .socials a {
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 361px) {
+  /* adjusted height */
+  .navbar {
+    height: 10vh;
+  }
+
+  /* adjusted width */
+  .navigation-list {
+    width: 85%;
+  }
+
+  /* adjusted width */
+  .toggle {
+    width: 15%;
+  }
+
+  /* applied flex wrap */
+  .navigation-list ul {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  /* changed font size,alignment */
+  .home h1 {
+    font-size: 65px;
+    text-align: center;
+  }
+
+  /* changed font size */
+  .home h3 {
+    font-size: 45px;
+  }
+
+  /* adjusted width */
+  .home ul {
+    width: 50%;
+  }
+
+  /* changed font size */
+  .about-info h1 {
+    font-size: 50px;
+  }
+
+  /* changed font size */
+  .about-info p {
+    font-size: 15px;
+  }
+
+  /* adjusted width */
+  .about img {
+    width: 30%;
+  }
+
+  /* changed font size */
+  .skills h1 {
+    font-size: 50px;
+  }
+
+  /* adjusted width */
+  .skills-progress {
+    width: 450px;
+  }
+
+  /* changed padding */
+  .certifications {
+    padding: 20px;
+  }
+
+  /* changed font size */
+  .certifications h1 {
+    font-size: 50px;
+  }
+
+  /* adjusted width & margin */
+  .certificate {
+    width: 60%;
+    margin: 20px;
+  }
+
+  /* changed padding */
+  .projects {
+    padding: 20px;
+  }
+
+  /* changed font size */
+  .projects h1 {
+    font-size: 50px;
+  }
+
+  /* adjusted width & margin,padding */
+  .project {
+    width: 75%;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  /* changed padding */
+  .project a {
+    padding: 2%;
+  }
+
+  /* changed padding */
+  .contact {
+    padding: 20px;
+  }
+
+  /* changed font size */
+  .contact h1 {
+    font-size: 50px;
+  }
+
+  /* adjusted width & margin,padding,font size */
+  .contact input {
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  /* added padding, changed flex direction to column */
+  footer {
+    padding: 20px;
+    flex-direction: column;
+    background-color: #0e140f;
+  }
+
+  /* changed width,font-size,alignment */
+  .socials,
+  .call-email {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  /* set display flex, adjusted items */
+  .socials ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10%;
+  }
+
+  /* changed icon color */
+  .socials a {
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  title, meta charset, viewport meta -->
+    <meta name="author" content="Vaishnavi">
+    <meta name="keywords" content="Portfolio">
+    <meta name="description" content="Creating a Portfolio Website">
+    <title>Portfolio</title>
+    <!-- Linked css file -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- linked different font families -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Parisienne&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <!-- inked fav icons -->
+    <script
+      src="https://kit.fontawesome.com/698b0d49df.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <!-- Header containing the navigation hyperlinks -->
+    <header class="navbar">
+        <nav class="navigation-list">
+          <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#certificates">CERTIFICATIONS</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div>
+          <!-- Added required logo -->
+          <img src="./images/logo.png">
+        </div>
+        <!-- Added toggle button -->
+        <div class="toggle">
+          <input type="checkbox" id="check" />
+          <label for="check" class="button"></label>
+        </div>
+    </header>
+    <!-- main section consisting of different sections -->
+    <main>
+      <!-- Home Section -->
+      <section class="home" id="home">
+        <!-- Heading and intro text -->
+        <h1>Vaishnavi Suryawanshi</h1>
+        <h3>Web Developer</h3>
+        <!-- Profile image -->
+        <img src="./images/profile.jpeg" alt="Profile image">
+        <!-- Social icons -->
+        <ul>
+          <li><a href="https://www.instagram.com/_vaisho2?igsh=NWk4cXFtcGhpZHll" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/vaishnavi-suryawanshi-ly07/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="https://x.com/VaishSurya02" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+          <li><a href="https://github.com/vaisho2" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+        <!-- Download resume button with hovering effect -->
+        <button><a href="https://drive.google.com/uc?export=download&id=1g79rhADSJwFWuElkKBpPB3sJsGRb6gD2">Resume</a></button>
+      </section>
+      <!--  About Section -->
+      <section class="about" id="about">
+        <div class="about-info">
+          <h1>About Me</h1>
+          <p>
+              I am a motivated and enthusiastic web developer with a solid foundation in HTML, CSS, JavaScript, and modern front-end frameworks. I have acquired the essential skills and knowledge needed to develop responsive, user-friendly websites and web applications. My academic projects and internships have equipped me with hands-on experience in both front-end and back-end development.
+          </p>
+     
+          <p>
+              I am adept at translating design concepts into functional, aesthetically pleasing web interfaces, and I thrive on solving complex problems and learning new technologies. My approach to web development is user-centric, focusing on delivering seamless and intuitive experiences.
+          </p> 
+        
+          <p id="extra-info">
+              Outside of web development, I have a creative side that I express through my hobbies of singing, dancing, and painting. These artistic pursuits enhance my ability to bring creativity and a unique perspective to my web development projects.
+          </p>
+          <!-- Read more button -->
+          <button onclick="showInfo()" id="about-btn">Read More</button>
+        </div>
+        <!--  Profile image -->
+        <img class="aboutimg" src="./images/aboutme.jpeg" alt="my image" />
+      </section>
+      <!-- Skills Section -->
+      <section class="skills" id="skills">
+        <h1>My Skills</h1>
+        <div class="skills-progress">
+          <li>
+            <h3>HTML</h3>
+            <span class="bar"> <span class="html"></span> </span>
+          </li>
+          <li>
+            <h3>CSS</h3>
+            <span class="bar"> <span class="css"></span> </span>
+          </li>
+          <li>
+            <h3>JavaScript</h3>
+            <span class="bar"> <span class="javascript"> </span> </span>
+          </li>
+          <li>
+            <h3>Java</h3>
+            <span class="bar"> <span class="java"> </span> </span>
+          </li>
+        </div>
+      </section>
+      <!-- Certifications Section -->
+      <section class="certifications" id="certificates">
+        <h1>My Certificates</h1>
+        <div class="certificate">
+          <h3>Java Certification</h3>
+          <p>Earned a Java certification from Udemy, demonstrating proficiency in Java programming concepts, object-oriented development, and practical application. This course enhanced my skills through hands-on projects and comprehensive learning modules.</p>
+          <button onclick="openCertificate('certi1')">View Certificate</button>
+          <img src="./images/Java Certificate.jpg" alt="Certificate" id="certi1">
+        </div>
+        <div class="certificate">
+          <h3>Python Certification</h3>
+          <p>Earned a Python certification from Udemy, showcasing expertise in Python programming, data analysis, and automation. This course strengthened my skills through practical projects and in-depth learning modules.</p>
+          <button onclick="openCertificate('certi2')">View Certificate</button>
+          <img src="./images/Python Certificate.jpg" alt="Certificate" id="certi2">
+        </div>
+        <div class="certificate">
+          <h3>ShapeAI Certification</h3>
+          <p>Received a Certificate of Appreciation from ShapeAI, recognizing my commitment and excellence in completing their comprehensive training program. This achievement highlights my dedication to learning and applying new skills in the field of technology.</p>
+          <button onclick="openCertificate('certi3')">View Certificate</button>
+          <img src="./images/ShapeAI Certificate.jpg" alt="Certificate" id="certi3">
+        </div>
+      </section>
+    </section>
+    <!--  Project Section -->
+    <section class="projects" id="projects">
+      <h1>My Projects</h1>
+      <div class="project">
+        <h3>My Blog</h3>
+        <p>"My Blog" is a sleek and user-friendly website created using HTML and CSS, designed to showcase personal stories and experiences through a clean, responsive layout. </p>
+        <a href="https://vaisho2.github.io/My-Blog/" target="_blank">View Project</a>
+      </div>
+      <div class="project" id="project2">
+        <h3>My Portfolio</h3>
+        <p>"My Portfolio" is a visually engaging and responsive website built with HTML and CSS, designed to showcase my web development projects and professional skills. This project demonstrates my ability to create clean, user-friendly layouts and effectively present my work.</p>
+        <a href="" target="_blank">View Project</a>
+      </div>
+      <div class="project">
+        <h3>Chirp Central</h3>
+        <p>"Chirp Central" is a dynamic website built with HTML and CSS, dedicated to providing comprehensive information about various bird species. This project showcases my ability to create an informative and user-friendly platform for bird enthusiasts and nature lovers.</p>
+        <a href="https://vaisho2.github.io/Chirp-Central/" target="_blank">View Project</a>
+      </div>
+      <div class="project">
+        <h3>Uni Website</h3>
+        <p>"Uni Website" is a clean and responsive site created with HTML and CSS, designed to offer detailed information about academic programs, campus life, and admission procedures. This project demonstrates my proficiency in developing structured and accessible web layouts for educational institutions.</p>
+        <a href="https://vaisho2.github.io/Uni-Website/" target="_blank">View Project</a>
+      </div>
+      <div class="project">
+        <h3>Asian Elevators</h3>
+        <p>"Asian Elavators" is a professional site built with HTML and CSS, showcasing the company's services, product offerings, and client testimonials. This project highlights my skills in creating a polished and user-friendly online presence for a business.</p>
+        <a href=" https://vaisho2.github.io/Asian-Elevators/" target="_blank">View Project</a>
+      </div>
+      <div class="project">
+        <h3>Nebula Elevators</h3>
+        <p>"Nebula Elevators" is an elegant and responsive platform designed with HTML and CSS to present the company's elevator solutions, service details, and contact information. This project emphasizes my ability to build an intuitive and visually appealing website tailored for business needs.</p>
+        <a href="https://vaisho2.github.io/Nebula-Elevators/" target="_blank">View Project</a>
+      </div>
+    </section>
+    <!--  Contact Section -->
+    <section class="contact" id="contact">
+      <h1>Contact</h1>
+      <form action="">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="Name" placeholder="Enter Full Name"><br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="Email Id" placeholder="Enter Email Id"><br>
+        <label for="msg">Message: </label>
+        <textarea name="msg" id="msg" name="Message" placeholder="Type Message"></textarea>
+        <button value="submit">Submit</button>
+      </form>
+    </section>
+    </main>
+    <!--  Footer starts here -->
+    <footer>
+        <section class="call-email">
+          <button><a href="tel:9172773406" target="_blank"><i class="fa-solid fa-phone"></i></a></button>
+          <button><a href="mailto:vaishnavisuryawanshi0201@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a></button>
+        </section>
+        <section class="socials">
+          <ul>
+              <li><a href="https://www.instagram.com/_vaisho2?igsh=NWk4cXFtcGhpZHll" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/vaishnavi-suryawanshi-ly07/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+              <li><a href="https://x.com/VaishSurya02" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+          </ul>
+        </section>
+    </footer>
+    <!-- Using script tag to embed extra information for read more button and to display certificates -->
+      <script>
+        var display = 0;
+        function showInfo() {
+          if (display == 0) {
+            var para = document.getElementById("extra-info");
+            var btn = document.getElementById("about-btn");
+            para.style.display = "block";
+            btn.innerHTML = "Read Less";
+            display = 1;
+          } else {
+            var para = document.getElementById("extra-info");
+            var btn = document.getElementById("about-btn");
+            para.style.display = "none";
+            btn.innerHTML = "Read More";
+            display = 0;
+          }
+        }
+  
+        var image=0
+        function openCertificate(certi){
+          var certificate= document.getElementById(certi);
+          if(image==0){
+            certificate.style.display="block";
+            image=1;
+          }else{
+            certificate.style.display="none";
+            image=0;
+          }
+        }
+      </script>
+</body>
+</html>
